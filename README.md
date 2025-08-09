@@ -1,69 +1,167 @@
-# React + TypeScript + Vite
+# React + TypeScript Project with CI/CD
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### 🚀 Project Overview
 
-Currently, two official plugins are available:
+Modern React + TypeScript project with comprehensive development setup including ESLint, SASS, CI/CD, and VS Code configuration.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 📁 Project Structure
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+test_cursor/
+├── .github/workflows/     # CI/CD configuration
+├── .vscode/              # VS Code settings
+├── src/                  # Source code
+│   ├── App.tsx          # Main component
+│   ├── main.tsx         # Entry point
+│   ├── App.scss         # Component styles
+│   └── index.scss       # Global styles
+├── public/              # Static assets
+├── dist/                # Build output (auto-generated)
+├── package.json         # Dependencies and scripts
+├── eslint.config.js     # ESLint configuration
+├── tsconfig.json        # TypeScript configuration
+├── vite.config.ts       # Vite configuration
+└── README.md           # This file
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 🛠️ Setup Instructions
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+#### 1. Prerequisites
+- Node.js 18+ 
+- Git
+- VS Code (recommended)
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+#### 2. Clone and Install
+```bash
+git clone git@github.com:Tsekhmister/test_cursor.git
+cd test_cursor
+npm install
 ```
+
+#### 3. Development
+```bash
+# Start development server
+npm run dev
+
+# Run all checks
+npm run check
+
+# Run checks with auto-fix
+npm run check:fix
+
+# Build for production
+npm run build
+```
+
+### 🔧 Available Scripts
+
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start development server |
+| `npm run build` | Build for production |
+| `npm run lint` | Run ESLint |
+| `npm run lint:fix` | Run ESLint with auto-fix |
+| `npm run type-check` | TypeScript type checking |
+| `npm run check` | Run all validations |
+| `npm run check:fix` | Run all validations with auto-fix |
+| `npm run preview` | Preview production build |
+
+### 🎯 Features
+
+- ✅ **React 19** with TypeScript
+- ✅ **Vite** for fast development
+- ✅ **ESLint** with modern configuration
+- ✅ **SASS** for advanced styling
+- ✅ **CI/CD** with GitHub Actions
+- ✅ **VS Code** auto-save and formatting
+- ✅ **Git hooks** ready
+- ✅ **Modern Git workflow**
+
+### 🔄 CI/CD Pipeline
+
+The project includes automated CI/CD with GitHub Actions:
+
+**Triggers:**
+- Push to `main` or `develop` branches
+- Pull requests to `main` or `develop`
+
+**Checks:**
+- ESLint validation
+- TypeScript compilation
+- Build verification
+- Node.js 18.x and 20.x compatibility
+
+**View CI/CD:**
+- Go to GitHub repository
+- Click "Actions" tab
+- See workflow runs and status
+
+### 🎨 Development Workflow
+
+1. **Create feature branch:**
+   ```bash
+   git checkout -b feature/your-feature
+   ```
+
+2. **Develop with auto-save:**
+   - VS Code auto-saves every 15 seconds
+   - ESLint shows errors in real-time
+   - Auto-formatting on save
+
+3. **Check before commit:**
+   ```bash
+   npm run check:fix
+   ```
+
+4. **Commit and push:**
+   ```bash
+   git add .
+   git commit -m "feat: your feature description"
+   git push origin feature/your-feature
+   ```
+
+5. **Create Pull Request:**
+   - Go to GitHub
+   - Create PR from feature branch to main
+   - CI/CD automatically runs
+   - Merge after approval
+
+### 🛠️ VS Code Setup
+
+The project includes optimized VS Code settings:
+
+- **Auto-save:** Every 15 seconds
+- **Format on save:** Enabled
+- **ESLint auto-fix:** On save
+- **TypeScript support:** Full
+
+### 📦 Dependencies
+
+**Production:**
+- React 19
+- TypeScript
+- Vite
+
+**Development:**
+- ESLint with modern plugins
+- SASS
+- Various TypeScript tools
+
+
+
+## 🚀 Quick Start
+
+```bash
+# Clone and setup
+git clone git@github.com:Tsekhmister/test_cursor.git
+cd test_cursor
+npm install
+
+# Start development
+npm run dev
+
+# Check everything works
+npm run check
+```
+
+**Happy coding! 🎉**
