@@ -24,24 +24,16 @@ jobs:
         node-version: ${{ matrix.node-version }}
 
     - name: Install dependencies
-      run: |
-        cd my-react-app
-        npm ci
+      run: npm ci
 
     - name: Run ESLint
-      run: |
-        cd my-react-app
-        npm run lint
+      run: npm run lint
 
     - name: Type check
-      run: |
-        cd my-react-app
-        npm run build
+      run: npm run build
 
     - name: Run tests (if exists)
-      run: |
-        cd my-react-app
-        npm test --if-present
+      run: npm test --if-present
 
   deploy-preview:
     needs: test
@@ -58,14 +50,10 @@ jobs:
         node-version: '20.x'
 
     - name: Install dependencies
-      run: |
-        cd my-react-app
-        npm ci
+      run: npm ci
 
     - name: Build project
-      run: |
-        cd my-react-app
-        npm run build
+      run: npm run build
 
     - name: Deploy to preview
       run: echo "Deploy preview would go here"
